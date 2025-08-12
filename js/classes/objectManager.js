@@ -32,6 +32,10 @@ class CobjectManager {
         
         console.log(item.name);
     }
+
+    static findByName(name) { // troba un objecte usant el seu atribut de nom
+        return vobj.find(obj => obj.name === name);
+    }
     
    
 }

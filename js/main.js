@@ -59,8 +59,8 @@ const lollypalAnimationSheet = new AnimationSheet("images/lollypoppal.png", 100,
 const candybowlAnimationSheet = new AnimationSheet("images/candybowl1.png", 62, 93, 1, 1);
 const bubble1AnimationSheet = new AnimationSheet("images/bubble1.png", 54, 16, 1, 3);
 const selectobjAnimationSheet = new AnimationSheet("images/select_obj.png", 54, 19, 1, 3);
-const stove1AnimationSheet = new AnimationSheet("images/stoveonfire1.png", 329, 84, 1, 7);
-const stove2AnimationSheet = new AnimationSheet("images/stove1.png", 50, 84, 1, 1);
+const stoveOnFireAnimationSheet = new AnimationSheet("images/stoveonfire1.png", 329, 84, 1, 7);
+const stoveApagadaAnimationSheet = new AnimationSheet("images/stove1.png", 50, 84, 1, 1);
 const planta1AnimationSheet = new AnimationSheet("images/plantaterra1.png", 22,26, 1, 1);
 const stones1AnimationSheet = new AnimationSheet("images/pedres1.png", 62,34, 1, 1);
 const trumpSheet = new AnimationSheet("images/trump_run.png", 600,400, 4, 6);
@@ -153,15 +153,18 @@ CcharacterManager.add(monst7);
 
 const stove1 = new Cobject(canvas.width / 10 * 6, canvas.height * 2 / 3, 34, 60, scale, 0, 
 marg_stove,  name= "stove11", clase="obj");
-stove1.animations.push(new Animation(stove1AnimationSheet, 0, [5,5,5,5,5,5,5]));
+stove1.animations.push(new Animation(stoveOnFireAnimationSheet, 0, [5,5,5,5,5,5,5]));
+stove1.animations.push(new Animation(stoveApagadaAnimationSheet, 0, 1));
 stove1.animation = stove1.animations[0];
 stove1.animation.animating = true;
 //CobjectManager.add(stove1);
 
 const stove2 = new Cobject(canvas.width / 10 * 6, canvas.height * 2 / 3, 34, 60, scale, 0, 
 marg_stove,  name= "stove2", clase="obj");
-stove2.animations.push(new Animation(stove2AnimationSheet, 0, 1));
-stove2.animation = stove2.animations[0];
+stove2.animations.push(new Animation(stoveOnFireAnimationSheet, 0, [5,5,5,5,5,5,5]));
+stove2.animations.push(new Animation(stoveApagadaAnimationSheet, 0, 1));
+stove2.animation = stove2.animations[1];
+stove1.animation.animating = false;
 //CobjectManager.add(stove2);
 
 

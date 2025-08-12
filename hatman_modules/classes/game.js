@@ -41,37 +41,39 @@ class Cgame {
     generate_objs() {
         //fire stove
         const stove1 = new classes.Cobject(canvasw / 10 * 6, canvash * 2 / 3, 34, 60, scale, 0, 
-margins.marg_stove, "stove1", "stove");
-console.log(stove1.name + " margins: " + margins.marg_stove);
-        classes.CobjectManager.add(stove1);
-        
-        //empty stove
-        const stove2 = new classes.Cobject(canvasw / 10 * 6, canvash * 2 / 3, 34, 60, scale, 0, 
-margins.marg_stove, "stove2", "stove");
-        classes.CobjectManager.add(stove2);
-        
-        //light saber
-        const lightsaber = new classes.Cobject(canvasw / 10 * 6, canvash * 2 / 3, 24, 48, scale, 0, 
-[0,0,0,0], "lightsaber", "stick");
-        classes.CobjectManager.add(lightsaber);
-        
-        //barrils de candy aleatoriament
-        for(let i=0; i<5; ++i) {
-            const barril3 = new  classes.Cobject(canvasw / 10 * 6, canvash * 3 / 3, 32, 37, scale, 0, 
-            margins.marg_barril1,  "barrillcandy"+i, "barril candy");
-//            barril3.animations.push(new Animation(barril1AnimationSheet, 0, 1));
-//            barril3.animation = barril3.animations[0];
-         classes.CobjectManager.add(barril3);
-        }
-        //adding the bubble
-       
+        margins.marg_stove, "stove1", "stove");
+        stove1.isOn = true;  // Apagat al principi
+        console.log(stove1.name + " margins: " + margins.marg_stove);
+                classes.CobjectManager.add(stove1);
+                
+                //empty stove
+                const stove2 = new classes.Cobject(canvasw / 10 * 6, canvash * 2 / 3, 34, 60, scale, 0, 
+        margins.marg_stove, "stove2", "stove");
+        stove2.isOn = false;  // Apagat al principi
+                classes.CobjectManager.add(stove2);
+                
+                //light saber
+                const lightsaber = new classes.Cobject(canvasw / 10 * 6, canvash * 2 / 3, 24, 48, scale, 0, 
+        [0,0,0,0], "lightsaber", "stick");
+                classes.CobjectManager.add(lightsaber);
+                
+                //barrils de candy aleatoriament
+                for(let i=0; i<5; ++i) {
+                    const barril3 = new  classes.Cobject(canvasw / 10 * 6, canvash * 3 / 3, 32, 37, scale, 0, 
+                    margins.marg_barril1,  "barrillcandy"+i, "barril candy");
+        //            barril3.animations.push(new Animation(barril1AnimationSheet, 0, 1));
+        //            barril3.animation = barril3.animations[0];
+                classes.CobjectManager.add(barril3);
+                }
+                //adding the bubble
+            
 
-//        bubble1.animations.push(new Animation(bubble1AnimationSheet, 0, [5,5,5]));
-//        bubble1.animation = bubble1.animations[0];
-//        bubble1.animation.animating = true;
-       
-        
-        
+        //        bubble1.animations.push(new Animation(bubble1AnimationSheet, 0, [5,5,5]));
+        //        bubble1.animation = bubble1.animations[0];
+        //        bubble1.animation.animating = true;
+            
+                
+                
         
         classes.CentityManager.fillArray();
     }

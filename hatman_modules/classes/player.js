@@ -2,6 +2,8 @@
  * Player class
  */
 
+const CobjectManager = require("./objectManager");
+
 if (typeof module !== "undefined" && module.exports) {
     Ccharacter = require("./character");
     
@@ -84,7 +86,7 @@ class Cplayer extends Ccharacter {
     }
     
     holdinhand(item) {
-        this.hand = item;w
+        this.hand = item;
     }
     
     warmup() {
@@ -159,7 +161,9 @@ class Cplayer extends Ccharacter {
                              case "put in bag":
                                 if(this._targetName =="lightsaber") this.addtobag("lightsaber"); 
                                 break;
-                        }    
+                        }
+                  
+
                 }
             }
             this._clicking = false;

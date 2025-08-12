@@ -112,11 +112,6 @@ io.on('connection', socket => {
   });
   
 
-  
-  
-  
-
-
 
 //setInterval(function() {
 //    Object.entries(rooms)
@@ -142,7 +137,7 @@ io.on('connection', socket => {
 //    });
 
     socket.on("player move_click", (room, dir, action, targetName, clicking) => {
-        
+        // crec que aquí es centre la gestió de les accions de cada jugador.
         //            if(target != "none") console.log("distance: " + )
 
         plyr = rooms[room].users[socket.id];
@@ -150,9 +145,35 @@ io.on('connection', socket => {
         plyr.targetName =targetName;
         plyr.action =action;
         plyr.clicking = clicking;
+
+        // Aquí fas la lògica d’accions sobre els objectes
+        if(targetName.startsWith("stove")) {
+            let stove = classes.CobjectManager.findByName(targetName);
+            
+            if (!stove) return; // si no existeix
+
+            if(action === "start fire") {
+                stove.isOn = true;
+                console.log("com està l'stove "+stove.name + " encesa?: " +stove.isOn);
+
+                // Envia a tots de la sala que l’estufa ha canviat d’estat
+                io.to(room).emit("stove-state-changed", {
+                    name: stove.name,
+                    isOn: stove.isOn
+                });
+
+            } else if(action === "stop fire") {
+                stove.isOn = false;
+                console.log("com està l'stove "+stove.name + " encesa?: " +stove.isOn);
+
+                // Envia actualització a clients
+                io.to(room).emit("stove-state-changed", {
+                    name: stove.name,
+                    isOn: stove.isOn
+                });
+            }
+        }
     });
-  
-  
 });
 
 

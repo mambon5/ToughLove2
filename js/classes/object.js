@@ -20,6 +20,7 @@ class Cobject extends Centity {
     }
    
     draw() {
+        // if (!this.animation) return; // No fa res si no hi ha animació
         this.animation.animate();
         let x  = this.x - player.x + player.x_init;
         let y  = this.y - player.y + player.y_init;

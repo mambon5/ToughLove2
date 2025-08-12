@@ -48,9 +48,9 @@ socket.on("bubble state", bubhostname => {
    vchar.forEach(char => {
        if(char.name == bubhostname) bubble1.host = char
    });
-   
-   
 });
+
+
 
 socket.on("current users", (charvec, objvec) => {   
     objvec.forEach(obj  => {
@@ -181,6 +181,31 @@ socket.on('user-disconnected', user => {
   //delete player if we have to.
 })
 
+
+socket.on("stove-state-changed", data => {
+    // data = { name: "stove1", isOn: true/false }
+    let stoveObj = CobjectManager.findByName(data.name); // Funció que tu tinguis per buscar l’objecte localment
+    if(stoveObj) {
+        stoveObj.isOn = data.isOn;
+
+        // Aquí actualitzes la representació visual de la stove, per exemple:
+        if(stoveObj.isOn) {
+            // Mostra foc o imatge d’estufa encesa
+            stoveObj.animation = stoveObj.animations[0];
+            stoveObj.animation.animating = true;
+            console.log("estufa encesa");
+
+        } else {
+            // Mostra imatge d’estufa apagada
+            stoveObj.animation = stoveObj.animations[1];
+            stoveObj.animation.animating = false;
+            console.log("estufa apagada");
+        }
+    }
+});
+
+
+
 function appendMessage(message) {
   const messageElement = document.createElement('div');
   messageElement.innerText = message
@@ -254,12 +279,15 @@ function find_item(obj) {
    
     
     if(name == "stove1") { 
-        obja.animations.push(new Animation(stove1AnimationSheet, 0, [5,5,5,5,5,5,5]));
+        console.log("entrant el find item stove 1 part");
+        obja.animations.push(new Animation(stoveOnFireAnimationSheet, 0, [5,5,5,5,5,5,5]));
+        obja.animations.push(new Animation(stoveApagadaAnimationSheet, 0, 1));
         obja.animation = obja.animations[0];
         obja.animation.animating = true;
     } else if(name == "stove2") {
-        obja.animations.push(new Animation(stove2AnimationSheet, 0, 1));
-        obja.animation = obja.animations[0];
+        obja.animations.push(new Animation(stoveOnFireAnimationSheet, 0, [5,5,5,5,5,5,5]));
+        obja.animations.push(new Animation(stoveApagadaAnimationSheet, 0, 1));
+        obja.animation = obja.animations[1];
     
     } else if(clase == "barril candy") {
         obja.animations.push(new Animation(barril1AnimationSheet, 0, 1));
