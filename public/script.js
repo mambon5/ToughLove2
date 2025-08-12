@@ -20,8 +20,9 @@ if (messageForm != null) {
     console.log("you joined");
   messageForm.addEventListener('submit', e => {
     e.preventDefault();
-    const message = messageInput.value + `player x: ${Math.round(player.x) + 
-            ", y: " +Math.round(player.y)}`;
+    // const message = messageInput.value + `player x: ${Math.round(player.x) + 
+    //         ", y: " +Math.round(player.y)}`;
+    const message = messageInput.value ;
     appendMessage(`You: ${message}`)
     socket.emit('send-chat-message', roomName, message);
     messageInput.value = '';
@@ -130,7 +131,7 @@ socket.on('user-connected', (player, user) => {
     CentityManager.fillArray();
     
 
-appendMessage(`${newpl.name} connected, x: ${Math.round(newpl.x)}, y: ${Math.round(newpl.y)}`);
+appendMessage(`${newpl.name} connected, coords: ( ${Math.round(newpl.x)}, ${Math.round(newpl.y)} )`);
 })
 
 //setInterval(function() {
