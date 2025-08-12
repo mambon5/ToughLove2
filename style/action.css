@@ -1,0 +1,14 @@
+
+#stove{
+    position:relative;
+    height:200%;
+}
+
+.action{
+    position:relative;
+    width:20px;
+    height:40px;
+    color:red;
+    font-family: "Comic Sans MS";
+    font-size:140%;
+}

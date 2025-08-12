@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#message-container {
+    position: absolute;
+    width: 25%;
+    top: 25%;
+    left: 70%;
+}
+
+#message-container div {
+  background-color: #CCC;
+  padding: 5px;
+  top: 55%;
+    left: 70%;
+}
+
+#message-container div:nth-child(2n) {
+  background-color: #FFF;
+}
+
+#send-container {
+    position: absolute;
+    background-color: white;
+    width: 25%;
+    top: 75%;
+    left: 70%;
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1;
+}
+
+#my_canvas {
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    border: 4px solid black;
+    transform: translate(-75%,-50%);
+}
+
+#my_canvas_background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 930px;
+    height: 462px;
+    border: 4px solid black;
+    transform: translate(-75%,-50%);
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#bgimage {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-image: url("images/pingmagicmix1.png");
+    opacity:0.8;
+}
+
+#bggradient {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:pink;
+    opacity:0.0;
+}
+#barcontainer {
+    position:relative;
+    width:100%;
+    height:100%;
+    opacity:1.0;
+}
+
+.love_frame {
+    position:relative;
+    float:left;
+    width:25%;
+    height:100%;
+    opacity:1.0;
+}
+
+#lover {
+    position:relative;
+    float:left;
+    width:25%;
+    height:100%;
+    background-color:white;
+    opacity:1.0;
+    text-align: center;
+}
+
+#bag {
+    position:relative;
+     float:right;
+    width:25%;
+    height:100%;
+    background-color:beige;
+    opacity:1.0;
+    text-align: center;
+}
+
+#hand {
+    position:relative;
+    float:right;
+    width:25%;
+    height:100%;
+    background-color:salmon;
+    opacity:1.0;
+    text-align: center;
+}
+

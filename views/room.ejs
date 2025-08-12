@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToughLove</title>
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="/style/score_bars.css">
+  <link rel="stylesheet" href="/style/button.css">
+  <link rel="stylesheet" href="/style/action.css">
+  <script>
+    const roomName = "<%= roomName %>"
+
+  </script>
+  <script defer src="/socket.io/socket.io.js"></script>
+  
+</head>
+
+<body>
+
+<div id="bgimage"></div>
+<div id="bggradient"></div>
+<div id="barcontainer">
+    <div class="love_frame">
+        <div id="lovebar">  
+            your self love
+        </div>
+    </div>
+    <div id="lover"></div>
+    <div id="bag"></div>
+    <div id="hand"></div>
+</div>
+<canvas id="my_canvas_background"></canvas>
+<canvas id="my_canvas" onmousemove="mouseCoords(event)">
+    
+</canvas>
+<div id="optionMenu"></div>
+<div id="loverMenu"></div>
+
+<div id="aux" class="aux">hola</div>
+<div id="aux2" class="aux">aux2</div>
+<div id="aux3" class="aux">aux3</div>
+
+
+
+<img src="images/floor-tile3_light.jpg" id="floor" width="32" height="32">
+<img src="images/wood_big1.png" id="wall" width="32" height="32">
+<img src="images/grass1.png" id="grass" width="32" height="32">
+<img src="images/tileset2.png" id="tiles1" width="32" height="32">
+
+<script src="js/globalvars/entityVars.js"></script>
+<script src="js/globalvars/img_margins.js"></script>
+
+<script src="js/functions/underscore.js"></script>
+
+<script src="js/functions/drawobj.js"></script>
+<script src="js/functions/aritmetic.js"></script>
+<script src="js/functions/getblankspaces.js"></script>
+<script src="js/functions/xocs.js"></script>
+<script src="js/functions/distances.js"></script>
+
+<script src="js/classes/map.js"></script>
+<script src="js/classes/rectangle.js"></script>
+<script src="js/classes/mouse.js"></script>
+<script src="js/classes/tileSheet.js"></script>
+<script src="js/classes/animation.js"></script>
+<script src="js/classes/animationSheet.js"></script>
+<script src="js/classes/entity.js"></script>
+<script src="js/classes/character.js"></script>
+<script src="js/classes/object.js"></script>
+<script src="js/classes/characterManager.js"></script>
+
+<script src="js/classes/player.js"></script>
+<script src="js/classes/monster.js"></script>
+<script src="js/classes/background.js"></script>
+<script src="js/classes/game.js"></script>
+<script src="js/classes/bubble.js"></script>
+<script src="js/classes/objectManager.js"></script>
+<script src="js/classes/floorManager.js"></script>
+<script src="js/classes/entityManager.js"></script>
+<script src="js/classes/canvas.js"></script>
+<script src="js/classes/htmlbox.js"></script>
+
+<script src="js/main.js"></script>
+
+<script defer src="script.js"></script>
+
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send</button>
+  </form>
+</body>
+</html>

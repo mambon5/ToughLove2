@@ -1,0 +1,15 @@
+.love_frame{
+    position:relative;
+    border-radius: 30px;
+    background-color: pink;
+    visibility: visible;
+}
+#lovebar{
+    position:relative;
+    border-radius: 30px;
+    background-color: firebrick;
+    visibility: visible;
+    opacity:0.6;
+    color:white;
+    text-align: center;
+}
